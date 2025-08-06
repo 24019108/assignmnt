@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-// Abstract class for game characters
+
 abstract class Character {
     protected String name;
     protected int health;
@@ -34,7 +34,7 @@ abstract class Character {
     }
 }
 
-// Concrete class for Warrior character
+
 class Warrior extends Character {
     public Warrior(String name) {
         super(name, 100, 20);
@@ -48,7 +48,7 @@ class Warrior extends Character {
     }
 }
 
-// Concrete class for Mage character
+
 class Mage extends Character {
     public Mage(String name) {
         super(name, 80, 30);
@@ -68,7 +68,7 @@ public class Combatgame {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Combat Game!");
 
-        // Character creation
+        
         System.out.print("Enter the name for the Warrior: ");
         String warriorName = scanner.nextLine();
         Warrior warrior = new Warrior(warriorName);
@@ -77,7 +77,7 @@ public class Combatgame {
         String mageName = scanner.nextLine();
         Mage mage = new Mage(mageName);
 
-        // Combat loop
+        
         Character[] characters = {warrior, mage};
         int turn = 0;
         while (warrior.health > 0 && mage.health > 0) {
@@ -88,7 +88,7 @@ public class Combatgame {
             turn++;
         }
 
-        // Game over
+        
         System.out.println("\n Game Over ");
         if (warrior.health <= 0) {
             System.out.println(mage.name + " wins!");
